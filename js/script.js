@@ -31,6 +31,7 @@ const getPersonagemByName = function (nomePersonagem) {
     });
 };
 
+
 const createCards = function (personagens) {
   clearCards();
 
