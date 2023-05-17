@@ -1,6 +1,17 @@
-var botaoPesquisar = document.getElementById('pesquisar');
-var conteudo = document.getElementById('loadPersonagem');
+/* Nomes:
+  Felipe Rodrigues da silva souza - RA: 32232
+  Gabriel Medeiros Nascimento - Ra: 33336
+  */
 
+
+let botaoPesquisar = document.getElementById('pesquisar');
+let conteudo = document.getElementById('loadPersonagem');
+let input = document.getElementById('nomePersonagem')
+let inputNome = document.getElementById('nomePersonagem');
+let formulario= document.getElementById('frmSearch')
+
+
+// Função para chamar todos os personagens
 const getPersonagem = function () {
   let url = 'https://rickandmortyapi.com/api/character/';
 
@@ -16,7 +27,9 @@ const getPersonagem = function () {
     });
 };
 
+// Função para filtrar pelo nome do personagem
 const getPersonagemByName = function (nomePersonagem) {
+  nomePersonagem.toUpperCase()
   let url = `https://rickandmortyapi.com/api/character?name=${nomePersonagem}`;
 
   fetch(url)
@@ -31,7 +44,7 @@ const getPersonagemByName = function (nomePersonagem) {
     });
 };
 
-
+// Criar os cards dos personagens
 const createCards = function (personagens) {
   clearCards();
 
@@ -67,20 +80,40 @@ const createCards = function (personagens) {
   });
 };
 
+// limpa os cards
 const clearCards = function () {
   conteudo.innerHTML = '';
 };
 
+// Evento de escutar ao carregar
 window.addEventListener('load', function () {
   getPersonagem();
 });
 
+// Evento para pesquisa ao clicar
 botaoPesquisar.addEventListener('click', function () {
   clearCards();
-  let nome = document.getElementById('nomePersonagem').value;
+  let nome = inputNome.value
   if (nome === '') {
     getPersonagem();
   } else {
     getPersonagemByName(nome);
   }
 });
+
+// Serve para quando o teclado é pressionado na busca dando o 'Enter'
+input.addEventListener('keypress',function (tecla){
+  let nome = inputNome.value
+  console.log(tecla);
+  
+  if(tecla.key === 'Enter')
+  getPersonagemByName(nome)
+})
+
+// Serve para cancelar a ação da submit
+formulario.addEventListener('submit',function (event){
+  event.preventDefault()
+
+})
+
+

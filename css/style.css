@@ -1,4 +1,9 @@
-/* Reset do CSS */
+/* Nomes:
+  Felipe Rodrigues da silva souza - RA: 32232
+  Gabriel Medeiros Nascimento - Ra: 33336
+  */
+  
+  /* Reset do CSS */
 *{
     padding: 0;
     margin: 0;
@@ -8,15 +13,15 @@
     border: 0;
 }
 
-
-#image{
-    display: flex;
-    width:50px;
+body{
+    width: 100%;
+    height: auto;
+    background: no-repeat center/cover url(../image/noite.jpg)
 }
 
 #section{
     width: 100%;
-    height: 1500px;
+    height: 1500px; 
 }
 
 #logo{
@@ -25,20 +30,23 @@
     margin-top: -60px;
 }
 
+#image{
+    display: flex;
+    width:50px;
+}
 
 header{
     width: 1200px;
     height: 200px;
-    background-color: rgb(255, 255, 255);
+    background-color: #1c347c6e;
     margin: auto;
-    border: 1px solid black;
 }
 
 /* Serve para centralizar todas as seções do site (w: 1200 e H: inherit) */
 .principal{
     width: 1200px;
     height: inherit;
-    background-color: #b9cdce;
+    background-color: #6cb710;
     margin: auto;
 }
 
@@ -77,8 +85,8 @@ header{
 }
 
 #search input[type=button]:hover{
-    color: greenyellow;
-    box-shadow: 10px 5px 10px;
+    color: #ffff00;
+    box-shadow: 5px 5px 10px;
 }
 
 /*Card*/
@@ -86,13 +94,17 @@ header{
 .card{
     width: 220px;
     height: 250px;
-    background-color: #ebebeb;
+    background-color: #05b8d2;
     display: grid;
     float: left;
     margin: 20px 40px 20px 40px;
     padding-top: 10px;
     box-shadow: 10px 10px 20px ;
     border-radius: 5%;
+}
+.card:hover{
+    box-shadow: 10px 10px 50px ;
+    color: #eeff0085;
 }
 
 .card figure{
